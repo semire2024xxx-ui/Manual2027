@@ -61,15 +61,15 @@ const DB = {
 oficiales: {
     t: "OFICIALES",
     p: [
-      "<img src='img/Subteniente.jpg' class='insignia-rango'><div class='texto-rango'>Subteniente</div>",
-      "<img src='img/Teniente.jpg' class='insignia-rango'><div class='texto-rango'>Teniente</div>",
-      "<img src='img/Capitan.jpg' class='insignia-rango'><div class='texto-rango'>Capitán</div>",
-      "<img src='img/Mayor.jpg' class='insignia-rango'><div class='texto-rango'>Mayor</div>",
-      "<img src='img/Teniente Coronel.jpg' class='insignia-rango'><div class='texto-rango'>Teniente Coronel</div>",
-      "<img src='img/Coronel (Full).jpg' class='insignia-rango'><div class='texto-rango'>Coronel</div>",
-      "<img src='img/Brigadier General.jpg' class='insignia-rango'><div class='texto-rango'>Brigadier General</div>",
-      "<img src='img/Mayor General.jpg' class='insignia-rango'><div class='texto-rango'>Mayor General</div>",
-      "<img src='img/General.jpg' class='insignia-rango'><div class='texto-rango'>General</div>"
+      "<img src='img/Subteniente.png' class='insignia-rango'><div class='texto-rango'>Subteniente</div>",
+      "<img src='img/Teniente.png' class='insignia-rango'><div class='texto-rango'>Teniente</div>",
+      "<img src='img/Capitan.png' class='insignia-rango'><div class='texto-rango'>Capitán</div>",
+      "<img src='img/Mayor.png' class='insignia-rango'><div class='texto-rango'>Mayor</div>",
+      "<img src='img/Teniente Coronel.png' class='insignia-rango'><div class='texto-rango'>Teniente Coronel</div>",
+      "<img src='img/Coronel (Full).png' class='insignia-rango'><div class='texto-rango'>Coronel</div>",
+      "<img src='img/Brigadier General.png' class='insignia-rango'><div class='texto-rango'>Brigadier General</div>",
+      "<img src='img/Mayor General.png' class='insignia-rango'><div class='texto-rango'>Mayor General</div>",
+      "<img src='img/General.png' class='insignia-rango'><div class='texto-rango'>General</div>"
     ]
   },
   suboficiales: {
