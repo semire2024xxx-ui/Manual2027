@@ -22,7 +22,8 @@ const DB = {
       "VIII ESTROFA <br><br> La virgen sus cabellos arranca en agonía <br> y de su amor viuda los cuelga del ciprés. <br> Lamenta su esperanza que cubre losa fría, <br> pero un glorioso orgullo circunda su esbeltez.",
       "IX ESTROFA <br><br> La patria así se forma, termópilas brotando; <br> constelación de cíclopes su noche iluminó. <br> La flor estremecida, mortal el viento hallando, <br> debajo de los laureles seguridad buscó.",
       "X ESTROFA <br><br> Mas no es completa gloria vencer en la batalla, <br> que el brazo que combate lo anima la verdad. <br> Para el que lucha, el porvenir es la sonora malla <br> que su alma envuelve en flores de eterna libertad.",
-      "XI ESTROFA <br><br> Del hombre los derechos Nariño predicando, <br> el alma de la lucha profético enseñó. <br> Ricaurte en San Mateo en átomos volando, <br> deber antes que vida con llamas escribió."
+      "XI ESTROFA <br><br> Del hombre los derechos Nariño predicando, <br> el alma de la lucha profético enseñó. <br> Ricaurte en San Mateo en átomos volando, <br> deber antes que vida con llamas escribió.",
+      "nada"
     ]
   },
 
