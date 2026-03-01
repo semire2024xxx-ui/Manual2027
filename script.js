@@ -174,4 +174,91 @@ function cerrarVisor() {
   }
 }
 
+let mazoQuiz = [];
+let totalEnMazo = 0;
+
+function configurarQuiz(modo) {
+    // 1. Cargamos todos los rangos
+    mazoQuiz = [
+        ...DB.oficiales.p,
+        ...DB.suboficiales.p,
+        ...DB.soldados.p
+    ];
+
+    // 2. Si es al azar, mezclamos. Si es orden, lo dejamos como está (Oficiales -> Sub -> Sol)
+    if (modo === 'azar') {
+        mazoQuiz.sort(() => Math.random() - 0.5);
+    } else {
+        // En tu DB ya están en orden, así que no hacemos nada
+    }
+
+    totalEnMazo = mazoQuiz.length;
+    
+    // 3. Cambiamos de vista
+    document.getElementById('quiz-setup').style.display = 'none';
+    document.getElementById('quiz-juego').style.display = 'block';
+    
+    actualizarBarra(0);
+    generarPregunta();
+}
+
+function generarPregunta() {
+    if (mazoQuiz.length === 0) {
+        alert("¡FELICITACIONES! Has completado todo el mazo.");
+        navegar('pantalla-mando');
+        return;
+    }
+
+    // Actualizar progreso
+    const respondidos = totalEnMazo - mazoQuiz.length;
+    actualizarBarra(respondidos);
+
+    const rangoActual = mazoQuiz.shift(); // Tomamos el primero de la lista
+    const partes = rangoActual.split("<div");
+    const soloImagen = partes[0]; 
+    const soloNombre = partes[1] ? "<div" + partes[1] : "";
+
+    // 50% de probabilidad de modo
+    const modoNombreAPictograma = Math.random() > 0.5;
+
+    if (modoNombreAPictograma) {
+        document.getElementById('imagen-quiz').innerHTML = `<h3 class="titulo-oro">¿CÓMO ES LA INSIGNIA?</h3><br>${soloNombre}`;
+        document.getElementById('nombre-quiz').innerHTML = soloImagen;
+    } else {
+        document.getElementById('imagen-quiz').innerHTML = `<h3 class="titulo-oro">¿QUÉ RANGO ES?</h3><br>${soloImagen}`;
+        document.getElementById('nombre-quiz').innerHTML = soloNombre;
+    }
+    
+    document.getElementById('nombre-quiz').style.display = 'none';
+    document.getElementById('btn-revelar').style.display = 'block';
+    document.getElementById('btn-otro').style.display = 'none';
+}
+
+function actualizarBarra(completados) {
+    const porcentaje = Math.round((completados / totalEnMazo) * 100);
+    document.getElementById('progreso-azul').style.width = porcentaje + "%";
+    document.getElementById('porcentaje-texto').innerText = `${porcentaje}% completado (${completados} de ${totalEnMazo})`;
+}
+
+function revelarQuiz() {
+    document.getElementById('nombre-quiz').style.display = 'block';
+    document.getElementById('btn-revelar').style.display = 'none';
+    document.getElementById('btn-otro').style.display = 'block';
+}
+
+// Modificar navegar para resetear el menú del quiz al entrar
+function navegar(id) {
+    document.querySelectorAll('.pantalla, #pantalla-inicio').forEach(p => p.style.display = 'none');
+    const destino = document.getElementById(id);
+    if (destino) {
+        destino.style.display = 'block';
+        // Si volvemos al quiz, mostramos el menú de elección de nuevo
+        if(id === 'pantalla-quiz') {
+            document.getElementById('quiz-setup').style.display = 'block';
+            document.getElementById('quiz-juego').style.display = 'none';
+            document.getElementById('progreso-azul').style.width = "0%";
+        }
+    }
+}
+
 init();

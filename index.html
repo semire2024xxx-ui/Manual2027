@@ -35,9 +35,41 @@
       <button class="btn-principal" onclick="estudiar('soldados')">Soldados</button>
       <button class="btn-principal" onclick="estudiar('suboficiales')">Suboficiales</button>
       <button class="btn-principal" onclick="estudiar('oficiales')">Oficiales</button>
+      <button class="btn-principal" onclick="navegar('pantalla-quiz')">QUIZ</button>
       <button class="btn-nav" onclick="navegar('pantalla-inicio')">⬅ Volver al Inicio</button>
     </div>
   </div>
+
+<div id="pantalla-quiz" class="pantalla" style="display: none;">
+    <h2 class="titulo-oro">ENTRENAMIENTO</h2>
+
+    <div style="width: 80%; background-color: #333; margin: 10px auto; border-radius: 10px; height: 20px; overflow: hidden; border: 1px solid #444;">
+        <div id="progreso-azul" style="width: 0%; height: 100%; background-color: #007bff; transition: width 0.3s ease;"></div>
+    </div>
+    <div id="porcentaje-texto" style="color: white; font-size: 0.8rem; margin-bottom: 10px;">0% completado</div>
+
+    <div id="quiz-setup" style="display: block; text-align: center; padding: 20px;">
+        <h3 style="color: white;">¿Cómo quieres estudiar?</h3>
+        <button class="btn-principal" onclick="configurarQuiz('orden')">📈 ORDEN JERÁRQUICO</button>
+        <button class="btn-principal" onclick="configurarQuiz('azar')">🔀 AL AZAR (MIXTO)</button>
+    </div>
+
+    <div id="quiz-juego" style="display: none;">
+        <div class="visor-contenido" style="text-align: center; min-height: 250px;">
+            <div id="imagen-quiz"></div>
+            <div id="nombre-quiz" style="display: none; margin-top: 20px; padding: 10px; background: rgba(212, 175, 55, 0.2); border-radius: 10px;"></div>
+        </div>
+
+        <div class="menu-container">
+            <button id="btn-revelar" class="btn-principal" onclick="revelarQuiz()">👁️ MOSTRAR</button>
+            <button id="btn-otro" class="btn-principal" style="display: none; background-color: #28a745;" onclick="generarPregunta()">➡️ SIGUIENTE</button>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <button class="btn-nav" onclick="navegar('pantalla-mando')">⬅️ SALIR AL MENÚ</button>
+    </div>
+</div>
 
   <div id="visor-estudio" class="pantalla">
     <h2 id="titulo-visor" class="titulo-oro"></h2>
