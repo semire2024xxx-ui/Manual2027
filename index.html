@@ -1,0 +1,57 @@
+<div id="app">
+  <div id="pantalla-inicio" class="active">
+    <h1>Manual 2027</h1> 
+    <link rel="stylesheet" href="style.css">
+    <head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+    <div class="menu-container">
+      <button class="btn-principal" onclick="navegar('submenu-alba')">1. Al Romper el Alba</button>
+      <button class="btn-principal" onclick="navegar('escudo-armas')">2. El Escudo de Armas</button>
+      <button class="btn-principal disabled">3. Mi Fusil</button>
+      <button class="btn-principal" onclick="navegar('pantalla-mando')">4. La Línea de Mando</button>
+    </div>
+  </div>
+
+  <div id="submenu-alba" class="pantalla">
+    <h2 class="titulo-oro">AL ROMPER EL ALBA</h2>
+    <div class="menu-container">
+      <button class="btn-secundario" onclick="estudiar('oracionPatria')">Oración Patria</button>
+      <button class="btn-secundario" onclick="estudiar('himnoNacional')">Himno Nacional</button>
+      <button class="btn-secundario" onclick="estudiar('himnoEjercito')">Himno del Ejército</button>
+      <button class="btn-secundario" onclick="estudiar('codigoHonor')">Código de Honor</button>
+      <button class="btn-secundario" onclick="estudiar('escudoEjercito')">Escudo</button>
+      <button class="btn-nav" onclick="navegar('pantalla-inicio')">⬅ Volver al Inicio</button>
+    </div>
+  </div>
+
+  <div id="escudo-armas" class="pantalla">
+    <h2 class="titulo-oro">ESPECIALIDADES</h2>
+    <div class="menu-container" id="lista-armas"></div>
+    <button class="btn-nav" onclick="navegar('pantalla-inicio')">⬅ Volver al Inicio</button>
+  </div>
+
+  <div id="pantalla-mando" class="pantalla">
+    <h2 class="titulo-oro">LA LÍNEA DE MANDO</h2>
+    <div class="menu-container">
+      <button class="btn-principal" onclick="estudiar('soldados')">Soldados</button>
+      <button class="btn-principal" onclick="estudiar('suboficiales')">Suboficiales</button>
+      <button class="btn-principal" onclick="estudiar('oficiales')">Oficiales</button>
+      <button class="btn-nav" onclick="navegar('pantalla-inicio')">⬅ Volver al Inicio</button>
+    </div>
+  </div>
+
+  <div id="visor-estudio" class="pantalla">
+    <h2 id="titulo-visor" class="titulo-oro"></h2>
+    <div id="area-texto" class="texto-gigante"></div>
+    <div class="controles">
+      <button class="btn-nav" onclick="cambiarPagina(-1)">⬅ Atrás</button>
+      <button class="btn-nav" onclick="cambiarPagina(1)">Siguiente ➡</button>
+    </div>
+    <button class="btn-principal btn-home" onclick="cerrarVisor()">Volver al Listado</button>
+  </div>
+</div>
+<body>
+    <div id="app">
+        </div>
+
+    <script src="script.js"></script>
+</body>                                                                                   

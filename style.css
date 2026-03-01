@@ -1,0 +1,141 @@
+:root {
+  --oro: #f1c40f;
+  --fondo: #1a2421;
+  --gris: #2c3e50;
+  --naranja: #e67e22;
+}
+
+body {
+  background: var(--fondo);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+#app { padding: 20px; max-width: 600px; margin: auto; }
+
+h1, .titulo-oro { color: var(--oro); text-transform: uppercase; border-bottom: 2px solid var(--oro); padding-bottom: 10px; }
+
+.menu-container { display: flex; flex-direction: column; gap: 10px; }
+
+.btn-principal, .btn-secundario {
+  background: var(--gris);
+  color: white;
+  border: 2px solid var(--oro);
+  padding: 18px;
+  font-size: 1.2rem; /* <--- AQUÍ: Cambia este número para el tamaño de letra */
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%; /* Para que todos midan lo mismo de ancho */
+  box-sizing: border-box;
+}
+
+.disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Acordeón de Armas */
+.arma-item { border: 1px solid #444; border-radius: 10px; overflow: hidden; }
+.arma-header { padding: 15px; font-weight: bold; cursor: pointer; font-size: 1.3rem; }
+.arma-content { display: none; background: #34495e; padding: 10px; flex-direction: column; gap: 5px; }
+
+/* Colores de las Armas */
+.bg-infanteria { background: #c0392b; } /* Rojo */
+.bg-caballeria { background: #f1c40f; color: black; } /* Amarillo */
+.bg-artilleria { background: #000000; border: 1px solid white; } /* Negro */
+.bg-ingenieros { background: #8e44ad; } /* Púrpura */
+.bg-comunicaciones { background: #d35400; } /* Naranja */
+.bg-inteligencia { background: #2c3e50; } /* Azul Oscuro */
+.bg-aviacion { background: #3498db; } /* Azul Claro */
+.bg-logistica { background: #7f8c8d; } /* Gris */
+
+/* Visor */
+.pantalla { display: none; }
+.active { display: block; }
+.texto-gigante {
+  font-size: 2.2rem;
+  font-weight: 800;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 15px;
+}
+.controles { display: flex; gap: 10px; }
+.btn-nav {
+  background: var(--naranja);
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  font-weight: bold;
+  margin-top: 20px; /* <--- AQUÍ: Esto crea el espacio que pediste */
+}
+.btn-home { margin-top: 20px; background: #95a5a6; border: none; }
+
+/* Esto afecta a todos los botones de la app por igual */
+button, .btn-principal, .btn-secundario, .btn-nav, .btn-home {
+  font-size: 1.2rem !important; /* El !important asegura que nadie lo ignore */
+  font-weight: bold;
+  text-transform: uppercase; /* Opcional: para que se vean más militares */
+}
+
+#area-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.insignia-rango {
+  width: 160px; /* Tamaño un poco más grande para que se luzcan */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.texto-rango {
+  font-size: 1.6rem;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.tiempo-rango {
+  color: #a0a0a0; /* Gris claro */
+  font-style: italic; /* Cursiva */
+  font-size: 1.1rem; /* Un poco más pequeña que el nombre */
+  margin-top: 5px;
+}
+
+/* Opcional: si quieres que el escudo sea más imponente */
+img[src*='Escudo'] {
+  width: 200px; 
+}
+
+/* AJUSTES PARA CELULAR */
+@media (max-width: 600px) {
+  .btn-principal {
+    width: 90%;          /* Botones más anchos para que sea fácil tocarlos */
+    font-size: 1.2rem;   /* Letra más legible */
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  .texto-gigante {
+    font-size: 1.4rem;   /* El texto de los himnos no se cortará */
+    padding: 15px;
+  }
+
+  .insignia-rango {
+    width: 130px;        /* Tamaño optimizado para pantallas pequeñas */
+  }
+
+  .texto-rango {
+    font-size: 1.4rem;
+  }
+}
